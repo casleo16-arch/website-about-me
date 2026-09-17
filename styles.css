@@ -5,10 +5,133 @@
 }
 
 body {
+    margin: 0;
     background-color: rgb(10, 34, 86);
+    position: relative;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
 
-/* home page */
+body::before {
+    content: "";
+    position: fixed;
+    top: -180px;
+    left: -180px;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.08) 22%, rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    right: -220px;
+    bottom: -220px;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.07) 22%, rgba(255, 255, 255, 0.03) 44%, rgba(255, 255, 255, 0) 72%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.emoji {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    font-feature-settings: "emoji" 1;
+    line-height: 1;
+}
+
+.landing-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.landing-shell {
+    position: relative;
+    z-index: 1;
+    width: min(90vw, 700px);
+}
+
+.landing-card {
+    background: rgba(7, 23, 58, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 48px 36px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+.landing-kicker {
+    margin: 0 0 12px;
+    color: #bfd2ff;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.landing-title {
+    margin: 0 0 28px;
+    text-align: center;
+    font-family: Copperplate;
+    color: white;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+.scratch-search-form {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.scratch-search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.05rem;
+}
+
+.scratch-search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+.quick-links {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.quick-links a {
+    color: #dfe9ff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.top-bar {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px 10px;
+    box-sizing: border-box;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+    font-family: Copperplate;
+    font-size: 1.1rem;
+}
+
 .header-group {
     display: flex;
     align-items: center;
@@ -16,11 +139,14 @@ body {
 }
 
 .container {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 40px;
 }
 
 .title {
@@ -28,6 +154,7 @@ body {
     font-family: Copperplate;
     color: white;
 }
+
 .view-profile {
     font-size: 30px;
     font-family: Copperplate;
@@ -35,18 +162,21 @@ body {
     color: rgb(174, 174, 174);
     text-decoration: none !important;
 }
+
 .pfp {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    object-fit: cover   ;
+    object-fit: cover;
     border: 3px solid white;
 }
+
 .rect-container {
     display: flex;
     gap: 20px;
     margin-top: 30px;
 }
+
 .rectangle {
     width: 300px;
     height: 130px;
@@ -57,23 +187,132 @@ body {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.15);
 }
+
 .rect-title {
     color: white;
     font-family: monospace;
     font-size: 30px;
-} 
+}
+
 .rect-subtitle {
     color: rgba(255, 255, 255, 0.386);
     font-family: monospace;
     font-size: 19px;
 }
+
 .rectangle:hover {
     background-color: rgb(23, 55, 120);
     transform: translateY(-5px);
-} 
+}
+
 .bio-rect {
-  width: 100%;
-  height: 100%;
-  color: red;
+    width: 900px;
+    max-width: 90vw;
+    min-height: 140px;
+    margin-top: 30px;
+    padding: 20px 30px;
+    background-color: rgb(8, 28, 67);
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bio-text {
+    color: rgba(255, 255, 255, 0.356);
+    font-family: monospace;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    white-space: pre-line;
+}
+
+.pop-proj-text {
+    color: rgb(255, 255, 255);
+    font-family: Copperplate;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 30px;
+}
+
+.project-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    filter: brightness(1.08);
+}
+
+.project-1-title,
+.project-2-title,
+.project-3-title,
+.project-4-title {
+    color: rgba(255, 255, 255, 0.418);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.project-1,
+.project-2,
+.project-3,
+.project-4 {
+    height: 220px;
+    width: 300px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.project-item:hover .project-1,
+.project-item:hover .project-2,
+.project-item:hover .project-3,
+.project-item:hover .project-4 {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.08);
+}
+
+.project-1-stats,
+.project-2-stats,
+.project-3-stats,
+.project-4-stats {
+    color: rgb(182, 205, 255);
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-top: 3px;
+    text-align: center;
 }

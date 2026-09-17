@@ -1,34 +1,38 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Scratch Search</title>
+  </head>
 
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+  <body class="landing-body">
+    <div class="landing-shell">
+      <div class="landing-card">
+        <p class="landing-kicker">Scratch Explorer</p>
+        <h1 class="landing-title">Find a Scratcher</h1>
 
-    <body>
-        <div class="container">
-            <div class="header-group">
-                <h1 class="title"> yoshihome </h1>
-                <img src="yoshihome pfp.png" alt="Yoshihome PFP" class="pfp"></h1>
-            </div>
-            <a href="https://scratch.mit.edu/users/yoshihome/" class="view-profile"> ⬆️ view profile ⬆️ </a>
-            <div class="rect-container">
-                <div class="rectangle">
-                    <span class="rect-title"><b>Followers👥</b></span> <span class="rect-subtitle">18,370</span>
-                </div>
-                <div class="rectangle">
-                    <span class="rect-title"><b>Loves❤️</b></span> <span class="rect-subtitle">175,000</span>
-                </div>
-                <div class="rectangle">
-                    <span class="rect-title"><b>Faves⭐</b></span> <span class="rect-subtitle">151,000</span>
-                </div>
-                <div class="rectangle">
-                    <span class="rect-title"><b>Remixes🌀</b></span> <span class="rect-subtitle">50,567</span>
-                </div>
-            </div>
-            <div class="bio-rect"></div>
+        <form id="scratch-search-form" class="scratch-search-form">
+          <input
+            id="scratch-search-input"
+            type="text"
+            name="username"
+            placeholder="Search a Scratch username..."
+            autocomplete="off"
+            aria-label="Search Scratch user"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="quick-links">
+          <a href="userpage.html?username=yoshihome">yoshihome</a>
+          <a href="userpage.html?username=griffpatch">griffpatch</a>
+          <a href="userpage.html?username=csquared">csquared</a>
         </div>
-    </body>
+      </div>
+    </div>
 
+    <script src="game.js"></script>
+  </body>
 </html>

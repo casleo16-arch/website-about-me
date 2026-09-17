@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Scratch User</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top-bar">
+        <a href="index.html" class="home-link">← Home</a>
+      </div>
+
+      <div class="header-group">
+        <h1 id="profile-title" class="title">Loading...</h1>
+        <img id="profile-image" src="" alt="Scratch user avatar" class="pfp" />
+      </div>
+
+      <a id="profile-link" href="#" class="view-profile" target="_blank" rel="noopener noreferrer">
+        <span class="emoji">⬆️</span> view profile <span class="emoji">⬆️</span>
+      </a>
+
+      <div class="rect-container">
+        <div class="rectangle">
+          <span class="rect-title"><b>Followers<span class="emoji">👥</span></b></span>
+          <span id="follower-count" class="rect-subtitle" data-fallback="0">0</span>
+        </div>
+        <div class="rectangle">
+          <span class="rect-title"><b>Loves<span class="emoji">❤️</span></b></span>
+          <span id="love-count" class="rect-subtitle" data-fallback="0">0</span>
+        </div>
+        <div class="rectangle">
+          <span class="rect-title"><b>Faves<span class="emoji">⭐</span></b></span>
+          <span id="fave-count" class="rect-subtitle" data-fallback="0">0</span>
+        </div>
+      </div>
+
+      <div class="bio-rect">
+        <div id="bio-text" class="bio-text">Loading profile...</div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
